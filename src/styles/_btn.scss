@@ -1,0 +1,15 @@
+.btn {
+  @include transition(background-color 0.3s linear);
+  display: inline-block;
+  background-color: $turqoise;
+  color: $white;
+  padding: 1em 1.25em;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  border: none;
+  border-bottom: 2px solid darken($turqoise, 10%);
+  &:hover, &:active, &:focus {
+    background-color: $turqoise--dark;
+  }
+}

@@ -1,0 +1,92 @@
+.header {
+  position: relative;
+  background-color: #EEE;
+  @media only screen and (min-width: $break--small) {
+    background-color: $white;
+  }
+}
+.header__home {
+  display: inline-block;
+  padding: 0.5em 1em;
+  > svg {
+    display: inline-block;
+    vertical-align: middle;
+    width: 75px;
+    height: 66px;
+  }
+  @media only screen and (min-width: $break--small) {
+    padding: 1em 0;
+    margin-right: 0.5em;
+  }
+}
+.header__menuInput {
+  display: none;
+  &:checked {
+    & ~ .header__links {
+      display: block;
+    }
+    & ~ .header__menu:before {
+      $color: $gray--dark;
+      background-color: $color;
+      box-shadow:
+        0 0.25em 0 0 $color,
+        0 0.5em 0 0 $color;
+    }
+  }
+}
+.header__menu {
+  @include absolute(0.5em, 0);
+  padding: 2em 2.25em;
+  text-indent: -9999px;
+  line-height: 0;
+  &:before {
+    $color: rgba(0, 0, 0, 0.33);
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    @include transform(translate(50%, -50%));
+    width: 1em;
+    height: 0.15em;
+    background-color: $color;
+    box-shadow:
+      0 0.25em 0 0 $color,
+      0 0.5em 0 0 $color;
+  }
+  @media only screen and (min-width: $break--small) {
+    display: none;
+  }
+}
+.header__links {
+  display: none;
+  text-align: center;
+  @media only screen and (min-width: $break--small) {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+.header__link {
+  display: block;
+  padding: 0.5em;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  color: $turqoise;
+  &:hover, &:active, &:focus {
+    color: $turqoise--dark;
+  }
+  @media only screen and (min-width: $break--small) {
+    display: inline-block;
+    padding: 0;
+    margin: 0 0.5em;
+    border-bottom: none;
+  }
+}
+.header__cta {
+  display: none;
+  @media only screen and (min-width: $break--small) {
+    display: block;
+    @include absolute(50%, 0);
+    @include transform(translateY(-50%));
+  }
+}
