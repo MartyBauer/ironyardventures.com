@@ -34,3 +34,4 @@ node_modules
 
 # CodeKit
 config.codekit
+.DS_Store
