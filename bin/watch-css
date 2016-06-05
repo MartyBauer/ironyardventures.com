@@ -1,1 +1,0 @@
-nodemon --watch src/styles/ -e scss -x "npm run build-css"
